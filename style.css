@@ -1,4 +1,13 @@
 /* Rewrite Kube rules globally */
+a
+{
+    text-decoration: none;
+}
+a:hover, a:active
+{
+    font-weight: bolder;
+}
+
 .button, .button:active, .button:focus
 {
     background: #b69982;
@@ -21,6 +30,12 @@
 .black-broder
 {
     border: 1px black solid;
+}
+.black-link a,
+.black-link a:hover,
+.black-link a:active
+{
+    color: rgba(0, 0, 0, 0.75);
 }
 ul.inline-menu
 {
