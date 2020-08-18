@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <p hidden>{{ message }}</p>
-        <header class="navigator">
+        <header class="head navigator">
             <!-- data-kube="sticky" -->
             <div class="is-navbar-container">
                 <div class="is-brand">
@@ -117,9 +117,9 @@
                         <p>Ponfi Wine Cellars is an online wine shop in Hang Kong. We offer a comprehensive range of top quality wines from all over the world such as USA, Italy, France, Spain, Argentina, Chile and etc.</p>
                     </div>
                 </div>
-                <div class="item is-col">
-                    <div class="list">
-                        <ul class="all-caps">
+                <div class="foot-navigator-and-newsletter item is-col">
+                    <div class="foot navigator">
+                        <ul class="all-caps inline-menu with-gap">
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Shop</a></li>
                             <li><a href="#">Wine Club Benefit</a></li>
@@ -132,27 +132,37 @@
                         <form class="form">
                             <div class="form-item">
                                 <label class="all-caps">Newsletter</label>
-                                <input type="text" name="email" placeholder="Email address" class="no-radius" />
+                                <input type="text" name="email" placeholder="Email address" class="no-radius black-broder" />
                             </div>
                             <div class="form-item is-buttons">
                                 <button type="submit" class="no-radius all-caps button">Subscribe</button>
                             </div>
                         </form>
                     </div>
+                    <div class="sns">
+                        <div class="area">
+                            <a href="https://www.facebook.com" target="_blank">
+                                <img src="./fontawesome/facebook-square.svg" alt="Facebook logo" width="45" />
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <img src="./fontawesome/instagram.svg" alt="Instagram logo" width="45" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
         <div class="disclaimer container is-row">
             <div class="item is-col">
-                <div>
-                    <p>Under the law of the USA, you can't hold the childern pron.</p>
-                    <p>美國法律禁止持有兒童色情</p>
+                <div class="legel">
+                    <p>Use Optical Character Recognition software online.</p>
+                    <p>香港法律禁止任何人向未成年人售賣或供應酒類飲品。</p>
                 </div>
-                <div>
+                <div class="links">
                     <p>@ Ponfi Wine</p>
-                    <ul>
+                    <ul class="inline-menu with-gap">
                         <li><a href="#">ToS</a></li>
-                        <li><a href="#">PP</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">CP9</a></li>
                     </ul>
                 </div>
