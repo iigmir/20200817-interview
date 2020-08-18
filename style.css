@@ -2,3 +2,20 @@
 {
     background-color: rgba(0, 0, 0, 0.25);
 }
+
+.introduction.container
+{
+    width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.introduction .section h2
+{
+    font-size: 1.2rem;
+}
+
+.introduction .section img
+{
+    margin: 0 auto;
+}
