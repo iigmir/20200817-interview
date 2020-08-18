@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>點燃科技 2020 前端工程師試題</title>
     <link rel="stylesheet" href="./kube/css/kube.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/vue-agile/dist/VueAgile.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -35,6 +36,19 @@
                 </div>
             </div>
         </header>
+        <div class="slider">
+            <agile v-bind="agile_settings">
+                <img src="./images/slider-1.png" alt="First slide" />
+                <img src="./images/slider-2.png" alt="Second slide" />
+                <img src="./images/slider-3.png" alt="Third slide" />
+                <template slot="prevButton">
+                    <img src="./fontawesome/chevron-left.svg" alt="Switch to previous slider" width="20" />
+                </template>
+                <template slot="nextButton">
+                    <img src="./fontawesome/chevron-right.svg" alt="Switch to next slider" width="20" />
+                </template>
+            </agile>
+        </div>
         <main>
             <article class="introduction container is-row">
                 <section class="item section is-col">
@@ -172,6 +186,7 @@
     </div>
     <script src="./kube/js/kube.min.js"></script>
     <script src="./vue/dev.js"></script>
+    <script src="https://unpkg.com/vue-agile"></script>
     <script src="./main.js"></script>
 </body>
 </html>
