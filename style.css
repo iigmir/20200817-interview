@@ -1,3 +1,22 @@
+/* Rewrite Kube rules globally */
+.button, .button:active, .button:focus
+{
+    background: #b69982;
+}
+
+/* My globally rules */
+.all-caps
+{
+    text-transform: uppercase;
+}
+
+.no-radius
+{
+    border-radius: 0;
+}
+
+/* Rules by section parts */
+
 .navigator
 {
     background-color: rgba(0, 0, 0, 0.25);
@@ -5,7 +24,7 @@
 
 .container
 {
-    width: 1024px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
@@ -60,3 +79,21 @@
 {
     font-size: 1.2rem;
 }
+
+.footer
+{
+    background-color: #f2f0ea;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.disclaimer
+{
+    padding-top: 1rem;
+    background-color: #ffffff;
+}
+
+/* .footer .newsletter input::placeholder
+{
+    color: #1e1e1d;
+} */
