@@ -1,0 +1,75 @@
+{
+    "top_picks": [
+        {
+            "name": "Wine 1",
+            "image": "./images/W-BG-004-QT-212.jpg",
+            "vinage": 2018,
+            "country": "France",
+            "region": "Burgandy",
+            "size": {
+                "amount": 0.75,
+                "unit": "L"
+            },
+            "rating": {
+                "am": "89-91",
+                "ws": "92",
+                "wa": "94"
+            },
+            "price": {
+                "unit": "HK$",
+                "old": 768,
+                "on_sale": true,
+                "new": 500
+            },
+            "stock_amount": 3
+        },
+        {
+            "name": "Wine 2",
+            "image": "./images/W-BG-011-QT-215.jpg",
+            "vinage": 2018,
+            "country": "Japan",
+            "region": "Komamura",
+            "size": {
+                "amount": 0.75,
+                "unit": "L"
+            },
+            "rating": {
+                "am": "78",
+                "ws": "89",
+                "wa": "82"
+            },
+            "price": {
+                "unit": "HK$",
+                "old": 600,
+                "on_sale": false,
+                "new": 600
+            },
+            "stock_amount": 0
+        }
+    ],
+    "new_arrivials": [
+        {
+            "name": "Wine U1",
+            "image": "./images/W-JP-002-QT-216.png",
+            "vinage": 2012,
+            "country": "United States",
+            "region": "Lascarot",
+            "size": {
+                "amount": 0.75,
+                "unit": "L"
+            },
+            "rating": {
+                "am": "59",
+                "ws": "60",
+                "wa": "52"
+            },
+            "price": {
+                "unit": "HK$",
+                "old": 300,
+                "on_sale": true,
+                "new": 100
+            },
+            "stock_amount": 13
+        }
+    ]
+}
