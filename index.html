@@ -8,105 +8,116 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="navigator">
-        <!-- data-kube="sticky" -->
-        <div class="is-navbar-container">
-            <div class="is-brand">
-                <!-- <b class="is-logo">Ponti</b> -->
-                <img src="./images/ponti-wine-cellars-logo-1589532960.jpg.png" alt="Logo" width="100" />
-                <!-- <img src="./images/ponti_wine_cellars-logo BLACK.png" alt="Logo" width="100" /> -->
-            </div>
-            <div class="is-navbar">
-                <nav>
-                    <ul>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Promotions</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-                <div>
-                    <img src="./fontawesome/search.svg" alt="Search icon" width="40" />
-                    <img src="./fontawesome/shopping-cart.svg" alt="Shop cart icon" width="40" />
+    <div id="app">
+        <p hidden>{{ message }}</p>
+        <header class="navigator">
+            <!-- data-kube="sticky" -->
+            <div class="is-navbar-container">
+                <div class="is-brand">
+                    <!-- <b class="is-logo">Ponti</b> -->
+                    <img src="./images/ponti-wine-cellars-logo-1589532960.jpg.png" alt="Logo" width="100" />
+                    <!-- <img src="./images/ponti_wine_cellars-logo BLACK.png" alt="Logo" width="100" /> -->
+                </div>
+                <div class="is-navbar">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Promotions</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <img src="./fontawesome/search.svg" alt="Search icon" width="40" />
+                        <img src="./fontawesome/shopping-cart.svg" alt="Shop cart icon" width="40" />
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <article class="introduction container is-row">
-            <section class="item section is-col">
-                <img src="./images/image-53-4.png" alt="Tuxedo" width="120" />
-                <h2>Trusted wine delivery service</h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </section>
-            <section class="item section is-col">
-                <img src="./images/image-54-4.png" alt="A wine box" width="120" />
-                <h2>Incredible value premium wines</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </section>
-            <section class="item section is-col">
-                <img src="./images/image-55.png" alt="Car" width="120" />
-                <h2>Free delivery</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </section>
-        </article>
-        <div class="break-line"></div>
-        <article class="heightlights container is-row">
-            <section class="item is-col">
-                <div class="image">
-                    <img src="./images/heightlight-desktop-1.png" alt="Heightlight 1" />
+        </header>
+        <main>
+            <article class="introduction container is-row">
+                <section class="item section is-col">
+                    <img src="./images/image-53-4.png" alt="Tuxedo" width="120" />
+                    <h2>Trusted wine delivery service</h2>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </section>
+                <section class="item section is-col">
+                    <img src="./images/image-54-4.png" alt="A wine box" width="120" />
+                    <h2>Incredible value premium wines</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </section>
+                <section class="item section is-col">
+                    <img src="./images/image-55.png" alt="Car" width="120" />
+                    <h2>Free delivery</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </section>
+            </article>
+            <div class="break-line"></div>
+            <article class="heightlights container is-row">
+                <section class="item is-col">
+                    <div class="image">
+                        <img src="./images/heightlight-desktop-1.png" alt="Heightlight 1" />
+                    </div>
+                    <div class="text">
+                        <h2>Article 1</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </section>
+                <section class="item is-col">
+                    <div class="image">
+                        <img src="./images/heightlight-desktop-2.png" alt="Heightlight 1" />
+                    </div>
+                    <div class="text">
+                        <h2>Article 2</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </section>
+                <section class="item is-col">
+                    <div class="image">
+                        <img src="./images/heightlight-desktop-3.png" alt="Heightlight 1" />
+                    </div>
+                    <div class="text">
+                        <h2>Article 3</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </section>
+                <section class="item is-col">
+                    <div class="image">
+                        <img src="./images/heightlight-desktop-4.png" alt="Heightlight 1" />
+                    </div>
+                    <div class="text">
+                        <h2>Article 4</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </section>
+            </article>
+            <article class="top-picks container">
+                <div class="panel">
+                    <h2>Ponti's top picks</h2>
+                    <div class="pagi"></div>
                 </div>
-                <div class="text">
-                    <h2>Article 1</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
+                <div class="gallery"></div>
+            </article>
+            <article class="new-arrivals container">
+                <div class="panel">
+                    <h2>New arrival...</h2>
+                    <div class="pagi"></div>
                 </div>
-            </section>
-            <section class="item is-col">
-                <div class="image">
-                    <img src="./images/heightlight-desktop-2.png" alt="Heightlight 1" />
-                </div>
-                <div class="text">
-                    <h2>Article 2</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </section>
-            <section class="item is-col">
-                <div class="image">
-                    <img src="./images/heightlight-desktop-3.png" alt="Heightlight 1" />
-                </div>
-                <div class="text">
-                    <h2>Article 3</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </section>
-            <section class="item is-col">
-                <div class="image">
-                    <img src="./images/heightlight-desktop-4.png" alt="Heightlight 1" />
-                </div>
-                <div class="text">
-                    <h2>Article 4</h2>
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </section>
-        </article>
-        <article>
-            new wine
-        </article>
-    </main>
-    <footer>
-        <div>
-            <img src="./images/ponti-wine-cellars-logo-1589532960.jpg.png" alt="logo" />
-        </div>
-        <div>
-            copyright
-        </div>
-    </footer>
+                <div class="gallery"></div>
+            </article>
+        </main>
+        <footer>
+            <div>
+                <img src="./images/ponti-wine-cellars-logo-1589532960.jpg.png" alt="logo" />
+            </div>
+            <div>
+                copyright
+            </div>
+        </footer>
+    </div>
     <script src="./kube/js/kube.min.js"></script>
-    <script>
-    $K.init({
-        observer: true
-    });
-    </script>
+    <script src="./vue/dev.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
