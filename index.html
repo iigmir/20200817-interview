@@ -66,11 +66,11 @@
         </header>
         <header class="mobile-screen top head fixed navigator">
             <div class="info item">
-                <div class="hamburger">
+                <div class="hamburger" v-on:click="set_mobile_menu_hidden(!mobile_menu_hidden)">
                     <img src="./fontawesome/bars.svg" alt="Hamburger menu" width="25" />
                 </div>
-                <div class="menu-panel">
-                    <span class="close"></span>
+                <div class="menu-panel" v-bind:hidden="mobile_menu_hidden">
+                    <span class="close" v-on:click="close_menu()"></span>
                     <ul class="all-caps black-link menu">
                         <li><a href="#">Log in / Register</a></li>
                         <li><a href="#">Shop</a></li>
