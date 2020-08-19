@@ -4,21 +4,18 @@ a:hover, a:active { font-weight: bolder; }
 .button, .button:active, .button:focus { background: #b69982; }
 
 /* My own global rules */
+main { padding: 0 1rem 0 1rem; }
 .all-caps { text-transform: uppercase; }
 .no-radius { border-radius: 0; }
 .black-broder { border: 1px black solid; }
 .text-center, .center-text { text-align: center; }
-.container
-{
-    max-width: 1024px;
-    margin: 0 auto;
-}
+.container { margin: 0 auto; }
+
 .flex-split
 {
     display: flex;
     justify-content: center;
 }
-
 .flex-split > .item
 {
     flex: 1;
@@ -180,6 +177,8 @@ ul.inline-menu.with-gap li:last-child::after
     position: relative;
 }
 
+.heightlights .item .image img { width: 100%; }
+
 .heightlights .item .text
 {
     position: absolute;
@@ -214,10 +213,30 @@ ul.inline-menu.with-gap li:last-child::after
     padding: 1rem;
     margin: 1rem;
 }
+.vertical-justify
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.vertical-justify .bottom
+{
+    align-self: end;
+}
+
+/* Title in gallery's top */
 .shop .gallery > .item .title
 {
     overflow-wrap: anywhere;
 }
+
+/* Bottom part */
+.shop .gallery .bottom.flex-split
+{
+    width: 100%;
+}
+
+/* Rating in gallery's bottom left */
 .shop .gallery .ratings > .item
 {
     border: 1px solid #513a1a;
@@ -233,15 +252,17 @@ ul.inline-menu.with-gap li:last-child::after
     background-color: #513a1a;
     color: #ffffff;
 }
+
+/* Price in gallery's bottom left */
 .shop .gallery .price .sold-out
 {
     color: #c22c28;
     font-weight: bolder;
 }
-.shop .gallery .price .value
-{
-    color: #513a1a;
-}
+.shop .gallery .price .value { color: #513a1a; }
+
+/* Image in gallery's bottom right */
+.shop .gallery .picture img { float: right; }
 
 /* Footer */
 .footer
