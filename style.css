@@ -343,6 +343,10 @@ ul.inline-menu.with-gap li:last-child::after
 {
     border: 1px solid #ffffff;
 }
+.shop .gallery .buy .input-number .is-disabled
+{
+    cursor: default;
+}
 .shop .gallery .buy .input-number input[type="number"]
 {
     width: 25%;

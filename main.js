@@ -130,6 +130,10 @@ var app = new Vue({
                 this.buy_amounts = new_array;
             }
         },
+        bind_disabled_number(index = 0, value = 0, amount = 0) {
+            const new_value = this.buy_amounts[index] + value;
+            return new_value < 0 || new_value > amount;
+        },
         is_sold_out(amount = 1) {
             return amount < 1;
         }
