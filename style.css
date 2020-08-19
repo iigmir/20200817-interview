@@ -154,7 +154,61 @@ ul.inline-menu.with-gap li:last-child::after
     font-family: sans-serif;
 }
 
-/* The carousel slide styles is in carousel-slide.css */
+/*
+ * Vue slider custom CSS.
+ * Please refer the manual:
+ * https://github.com/ssense/vue-carousel#readme
+ */
+.slider
+{
+    margin-bottom: 2rem;
+}
+
+.VueCarousel-slide .item
+{
+    position: relative;
+    height: 900px;
+    background-size: auto 100%;
+    color: white;
+}
+.VueCarousel-slide .first.item{background-image: url("./images/slider-1.png");}
+.VueCarousel-slide .second.item{background-image: url("./images/slider-2.png");}
+.VueCarousel-slide .third.item{background-image: url("./images/slider-3.png");}
+
+.VueCarousel-slide .item .caption
+{
+    position: absolute;
+    right: 15%;
+    top: 25%;
+    font-size: 2rem;
+}
+
+.VueCarousel-navigation-button
+{
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    width: 80px;
+}
+
+.VueCarousel-navigation-button:hover
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+.VueCarousel-navigation-prev,
+.VueCarousel-navigation-next
+{
+    transform: translateY(-50%) !important;
+}
 
 /* Main section */
 
