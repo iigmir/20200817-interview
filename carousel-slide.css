@@ -1,19 +1,25 @@
-.expand-height
+/* Agile slider */
+.slider { margin-bottom: 2rem; }
+
+.VueCarousel-slide .item
 {
-    height: 100%;
+    position: relative;
+    height: 900px;
+    background-size: auto 100%;
+    color: white;
+}
+.VueCarousel-slide .first.item{background-image: url("./images/slider-1.png");}
+.VueCarousel-slide .second.item{background-image: url("./images/slider-2.png");}
+.VueCarousel-slide .third.item{background-image: url("./images/slider-3.png");}
+
+.VueCarousel-slide .item .caption
+{
+    position: absolute;
+    right: 15%;
+    top: 25%;
+    font-size: 2rem;
 }
 
-/* Agile slider */
-.slider
-{
-    margin-bottom: 1rem;
-}
-/* The first slide picture */
-/* .agile__slides--regular .agile__slide:first-child
-{
-    width: 100% !important;
-}*/
-/* class="VueCarousel-navigation-button VueCarousel-navigation-prev" */
 .VueCarousel-navigation-button
 {
     background: transparent;
@@ -28,6 +34,7 @@
             transition-duration: 0.3s;
     width: 80px;
 }
+
 .VueCarousel-navigation-button:hover
 {
     background-color: rgba(0, 0, 0, 0.5);
