@@ -54,9 +54,13 @@ var app = new Vue({
             },
             selected_wine: [],
             top_picks: [],
+            selected_wine_id: 0,
+            top_picks_id: 0,
+            group_unit: 4,
             new_arrivals: [],
             on_top: true,
             mobile_menu_hidden: true,
+            buy_amounts: [],
         }
     },
     computed: {
@@ -66,9 +70,17 @@ var app = new Vue({
                 has_thing: this.selected_wine.length > 0,
             };
         },
-        on_top2() {
-            return true;
-        }
+        top_picks_first() {
+            if( this.top_picks[0] ) {
+                return [
+                    this.top_picks[0],
+                    this.top_picks[1],
+                    this.top_picks[2],
+                    this.top_picks[3]
+                ];
+            }
+            return [];
+        },
     },
     methods: {
         set_detect_on_top() {
@@ -103,9 +115,28 @@ var app = new Vue({
                 document.querySelector(".mobile-screen.navigator .hamburger").addEventListener("click", e => e.stopPropagation() );
             }
         },
+        reset_buy_amounts() {
+            let a = [];
+            for (let index = 0; index < this.group_unit; index++) {
+                a.push(0);
+            }
+            this.buy_amounts = a;
+        },
+        buy_amount(index = 0, value = 0, amount = 0) {
+            let new_array = [ ...this.buy_amounts ];
+            const new_value = this.buy_amounts[index] + value;
+            if( new_value > 0 && new_value <= amount ) {
+                new_array[index] = new_value;
+                this.buy_amounts = new_array;
+            }
+        },
+        is_sold_out(amount = 1) {
+            return amount < 1;
+        }
     },
     created() {
         this.api_request();
         this.set_detect_on_top();
+        this.reset_buy_amounts();
     }
 });

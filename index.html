@@ -193,26 +193,26 @@
                     <div class="pagi"></div>
                 </div>
                 <p hidden>{{ top_picks }}</p>
-                <div class="flex-split gallery">
-                    <section class="vertical-justify item">
+                <div v-if="top_picks" class="flex-split gallery">
+                    <section v-for="(v_item, v_index) in top_picks_first" v-bind:key="v_index" class="vertical-justify item">
                         <div class="title">
-                            <h3>FJFFFNFKJNF</h3>
-                            <p><small>2012</small></p>
+                            <h3>{{ v_item.name }}</h3>
+                            <p><small>{{ v_item.vinage }}</small></p>
                         </div>
                         <div class="flex-split content">
                             <div class="item left is info">
                                 <div class="flex-split ratings">
                                     <div class="item">
                                         <div class="name">AM</div>
-                                        <div>24</div>
+                                        <div>{{ v_item.rating.am }}</div>
                                     </div>
                                     <div class="item">
                                         <div class="name">WS</div>
-                                        <div>15</div>
+                                        <div>{{ v_item.rating.ws }}</div>
                                     </div>
                                     <div class="item">
                                         <div class="name">WA</div>
-                                        <div>69</div>
+                                        <div>{{ v_item.rating.wa }}</div>
                                     </div>
                                 </div>
                                 <div hidden class="meta">
@@ -222,21 +222,21 @@
                                     <p>A: 1</p>
                                 </div>
                                 <div class="price">
-                                    <p class="all-caps sold-out">Out of stuck</p>
+                                    <p v-if="is_sold_out(v_item.stock_amount)" class="all-caps sold-out">Out of stuck</p>
                                     <p class="value">HK$ 786.01</p>
                                 </div>
                             </div>
                             <div class="item right is picture">
-                                <img src="./images/W-JP-003-QT-216.jpg" alt="FJFFFNFKJNF" width="75" />
+                                <img v-bind="{ src: v_item.image, alt: v_item.name }" width="75" />
                             </div>
                         </div>
                         <div class="buy">
                             <div class="form-item">
-                                <div class="input-number" data-kube="number">
-                                    <span class="is-down">-</span>
-                                    <input type="number" value="0" />
-                                    <span class="is-up">+</span>
-                                    <button type="button" class="button">Add to cart</button>
+                                <div class="input-number">
+                                    <span v-on:click="buy_amount(v_index, -1, v_item.stock_amount)" class="is-down">-</span>
+                                    <input type="number" min="0" v-bind:value="buy_amounts[v_index]" v-bind:max="v_item.stock_amount" />
+                                    <span v-on:click="buy_amount(v_index, +1, v_item.stock_amount)" class="is-up">+</span>
+                                    <button type="button" class="button" v-bind:disabled="is_sold_out(v_item.stock_amount)">Add to cart</button>
                                 </div>
                             </div>
                         </div>

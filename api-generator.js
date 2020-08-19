@@ -260,5 +260,6 @@ const API_GENERATOR = () =>
         on_sale: is_onsale,
         new: is_onsale ? wine_new_price : wine_old_price,
     };
-    return { name, image, vinage, country, region, size, rating, price };
+    const stock_amount = rand( 0, 10 );
+    return { name, image, vinage, country, region, size, rating, price, stock_amount };
 };
