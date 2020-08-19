@@ -47,6 +47,10 @@ ul.inline-menu.with-gap li::after
     content: "|";
     margin-left: 5px;
 }
+ul.inline-menu.with-gap.white-link li::after
+{
+    color: white;
+}
 ul.inline-menu.with-gap li:last-child::after
 {
     content: "";
@@ -74,22 +78,64 @@ ul.inline-menu.with-gap li:last-child::after
 /* Caption part: Left of top menu */
 .top.head.navigator .caption
 {
-    padding: 1rem;
+    padding: 2rem;
     padding-left: 2rem;
 }
-.top.head.navigator .caption small
+.top.head.navigator .caption *
 {
-    display: block;
-    line-height: 1.5rem;
+    line-height: 0.5rem;
     color: white;
 }
 
-/* Title at top menu */
+/* Title: Center of top menu */
 .top.head.navigator .title.item img
 {
     display: block;
     margin: 1rem auto 1rem auto;
 }
+.top.head.navigator .justify.head-menu > *
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Member features: Right of top menu */
+.top.head.navigator .member
+{
+    padding: 2rem;
+    display: flex;
+}
+.top.head.navigator .member .reminder
+{
+    margin-left: 1rem;
+}
+.top.head.navigator .member .shop .amount
+{
+    padding: 1rem;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+}
+
+.top.head.navigator .member .shop .badge:after
+{
+    content: attr(data-count);
+    position: absolute;
+    background: #ff6600;
+    height: 2rem;
+    top: 1rem;
+    right: 1.5rem;
+    width: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1rem;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid #ff6600;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
 
 /* .justify.head-menu */
 
