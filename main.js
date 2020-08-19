@@ -107,6 +107,5 @@ var app = new Vue({
     created() {
         this.api_request();
         this.set_detect_on_top();
-        this.set_close_menu_by_screen();
     }
 });
