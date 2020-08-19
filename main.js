@@ -9,9 +9,6 @@ var app = new Vue({
     {
         return {
             message: "Hello Vue!",
-            agile_settings: {
-                dots: false
-            },
             VueCarousel_settings: {
                 perPage: 1,
                 loop: true,
@@ -20,6 +17,15 @@ var app = new Vue({
                 navigationPrevLabel: "<img src='./fontawesome/chevron-left.svg' />",
                 navigationNextLabel: "<img src='./fontawesome/chevron-right.svg' />",
             },
+            selected_wine: []
+        }
+    },
+    computed: {
+        shopcart() {
+            return {
+                amount: this.selected_wine.length,
+                has_thing: this.selected_wine.length > 0,
+            };
         }
     },
     created()

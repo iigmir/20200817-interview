@@ -45,11 +45,10 @@
                             <img src="./fontawesome/search.svg" alt="Search" width="40" />
                         </a>
                     </span>
-                    <span class="shop">
-                        <a href="#">
-                            <img data-count="3" src="./fontawesome/shopping-cart.svg" alt="Shopping cart" width="40" />
+                    <span v-bind:class="{ shop: shopcart.has_thing }">
+                        <a href="#" class="badge" v-bind:data-count="shopcart.amount">
+                            <img src="./fontawesome/shopping-cart.svg" alt="Shopping cart" width="40" />
                         </a>
-                        <!-- <span class="amount">2</span> -->
                     </span>
                 </div>
             </div>

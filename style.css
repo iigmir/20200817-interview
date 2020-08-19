@@ -6,32 +6,22 @@ a:hover, a:active { font-weight: bolder; }
 /* My own global rules */
 .all-caps { text-transform: uppercase; }
 .no-radius { border-radius: 0; }
+.black-broder { border: 1px black solid; }
+.text-center, .center-text { text-align: center; }
 .container
 {
     max-width: 1024px;
     margin: 0 auto;
 }
-.text-center, .center-text { text-align: center; }
-
-/* Black broder */
-.black-broder
-{
-    border: 1px black solid;
-}
 
 /* Link colours */
 .black-link a,
 .black-link a:hover,
-.black-link a:active
-{
-    color: rgba(0, 0, 0, 0.75);
-}
+.black-link a:active { color: rgba(0, 0, 0, 0.75); }
+
 .white-link a,
 .white-link a:hover,
-.white-link a:active
-{
-    color: rgba(255, 255, 255, 1);
-}
+.white-link a:active { color: rgba(255, 255, 255, 1); }
 
 /* Inline menu */
 ul.inline-menu
@@ -109,35 +99,24 @@ ul.inline-menu.with-gap li:last-child::after
 {
     margin-left: 1rem;
 }
-.top.head.navigator .member .shop .amount
-{
-    padding: 1rem;
-    border-radius: 50%;
-    color: white;
-    background-color: red;
-}
-
 .top.head.navigator .member .shop .badge:after
 {
+    --circle-width: 2rem;
     content: attr(data-count);
     position: absolute;
-    background: #ff6600;
-    height: 2rem;
-    top: 1rem;
-    right: 1.5rem;
-    width: 2rem;
-    text-align: center;
-    line-height: 2rem;
+    top: 1.5rem;
+    right: 16rem;
+    width: var(--circle-width);
+    height: var(--circle-width);
+    line-height: var(--circle-width);
     font-size: 1rem;
+    text-align: center;
     border-radius: 50%;
+    background: red;
     color: white;
-    border: 1px solid #ff6600;
+    border: 1px solid red;
     font-family: sans-serif;
-    font-weight: bold;
 }
-
-
-/* .justify.head-menu */
 
 /* The carousel slide styles is in carousel-slide.css */
 
