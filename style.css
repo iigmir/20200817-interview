@@ -214,6 +214,34 @@ ul.inline-menu.with-gap li:last-child::after
     padding: 1rem;
     margin: 1rem;
 }
+.shop .gallery > .item .title
+{
+    overflow-wrap: anywhere;
+}
+.shop .gallery .ratings > .item
+{
+    border: 1px solid #513a1a;
+    text-align: center;
+    margin-right: 0.1rem;
+}
+.shop .gallery .ratings > .item:last-child
+{
+    margin-right: 0;
+}
+.shop .gallery .ratings > .item .name
+{
+    background-color: #513a1a;
+    color: #ffffff;
+}
+.shop .gallery .price .sold-out
+{
+    color: #c22c28;
+    font-weight: bolder;
+}
+.shop .gallery .price .value
+{
+    color: #513a1a;
+}
 
 /* Footer */
 .footer
