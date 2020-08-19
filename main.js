@@ -17,7 +17,8 @@ var app = new Vue({
                 navigationPrevLabel: "<img src='./fontawesome/chevron-left.svg' />",
                 navigationNextLabel: "<img src='./fontawesome/chevron-right.svg' />",
             },
-            selected_wine: []
+            selected_wine: [],
+            on_top: true
         }
     },
     computed: {
@@ -26,6 +27,9 @@ var app = new Vue({
                 amount: this.selected_wine.length,
                 has_thing: this.selected_wine.length > 0,
             };
+        },
+        on_top2() {
+            return true;
         }
     },
     created()

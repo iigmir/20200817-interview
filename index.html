@@ -10,18 +10,28 @@
 </head>
 <body>
     <div id="app">
-        <header class="top head navigator">
+        <header class="top head fixed navigator" v-bind:class="{ 'on-top': on_top, 'on-page': !on_top }">
             <div class="info item">
                 <div class="caption white-text">
-                    <p><small><b>TEL</b>: (852) 2736 7778</small></p>
-                    <p><small><b class="all-caps">Email</b>: csm@ponti.com</small></p>
+                    <p v-bind:hidden="!on_top"><small><b>TEL</b>: (852) 2736 7778</small></p>
+                    <p v-bind:hidden="!on_top"><small><b class="all-caps">Email</b>: csm@ponti.com</small></p>
+                    <img
+                        src="./images/ponti-wine-cellars-logo-1589532960.jpg.png"
+                        alt="Ponti logo when the scroll is not on top"
+                        width="75"
+                        v-bind:hidden="on_top"
+                    />
                 </div>
             </div>
             <div class="title item">
                 <div>
                     <h1>
                         <span hidden>Ponti</span>
-                        <img src="./images/ponti-wine-cellars-logo-1589532960.jpg.png" alt="Ponti logo" />
+                        <img
+                            src="./images/ponti-wine-cellars-logo-1589532960.jpg.png"
+                            alt="Ponti logo"
+                            v-bind:hidden="!on_top"
+                        />
                     </h1>
                 </div>
                 <div class="justify text-center head-menu">
@@ -50,31 +60,6 @@
                             <img src="./fontawesome/shopping-cart.svg" alt="Shopping cart" width="40" />
                         </a>
                     </span>
-                </div>
-            </div>
-        </header>
-        <header class="head sticky navigator" hidden>
-            <!-- data-kube="sticky" -->
-            <div class="is-navbar-container">
-                <div class="is-brand">
-                    <!-- <b class="is-logo">Ponti</b> -->
-                    <img src="./images/ponti-wine-cellars-logo-1589532960.jpg.png" alt="Logo" width="100" />
-                    <!-- <img src="./images/ponti_wine_cellars-logo BLACK.png" alt="Logo" width="100" /> -->
-                </div>
-                <div class="is-navbar">
-                    <nav>
-                        <ul class="all-caps">
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Promotions</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <div>
-                        <img src="./fontawesome/search.svg" alt="Search icon" width="40" />
-                        <img src="./fontawesome/shopping-cart.svg" alt="Shop cart icon" width="40" />
-                    </div>
                 </div>
             </div>
         </header>

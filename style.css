@@ -46,9 +46,27 @@ ul.inline-menu.with-gap li:last-child::after
     content: "";
 }
 
+/* Fixed navigator */
+.fixed.navigator
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
 /* Rules by section parts */
 
 /* Header */
+.head.navigator.on-top
+{
+    --top-padding: 2rem;
+}
+.head.navigator.on-page
+{
+    --top-padding: 1.5rem;
+}
 .head.navigator
 {
     background-color: rgba(0, 0, 0, 0.75);
@@ -68,7 +86,7 @@ ul.inline-menu.with-gap li:last-child::after
 /* Caption part: Left of top menu */
 .top.head.navigator .caption
 {
-    padding: 2rem;
+    padding-top: var(--top-padding);
     padding-left: 2rem;
 }
 .top.head.navigator .caption *
@@ -76,12 +94,27 @@ ul.inline-menu.with-gap li:last-child::after
     line-height: 0.5rem;
     color: white;
 }
+.top.head.on-page.navigator .caption img
+{
+    height: 75%;
+    /* width: unset; */
+}
 
 /* Title: Center of top menu */
 .top.head.navigator .title.item img
 {
     display: block;
     margin: 1rem auto 1rem auto;
+}
+.top.head.navigator .title.item img[hidden]
+{
+    display: none;
+}
+
+.top.head.on-page.navigator .head-menu
+{
+    padding-top: var(--top-padding);
+    /* padding-top: 1.5rem; */
 }
 .top.head.navigator .justify.head-menu > *
 {
@@ -92,8 +125,10 @@ ul.inline-menu.with-gap li:last-child::after
 /* Member features: Right of top menu */
 .top.head.navigator .member
 {
-    padding: 2rem;
+    padding-top: var(--top-padding);
+    padding-right: 2rem;
     display: flex;
+    justify-content: flex-end;
 }
 .top.head.navigator .member .reminder
 {
