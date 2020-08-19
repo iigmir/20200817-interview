@@ -11,17 +11,26 @@ a:hover, a:active { font-weight: bolder; }
     max-width: 1024px;
     margin: 0 auto;
 }
+.text-center, .center-text { text-align: center; }
 
 /* Black broder */
 .black-broder
 {
     border: 1px black solid;
 }
+
+/* Link colours */
 .black-link a,
 .black-link a:hover,
 .black-link a:active
 {
     color: rgba(0, 0, 0, 0.75);
+}
+.white-link a,
+.white-link a:hover,
+.white-link a:active
+{
+    color: rgba(255, 255, 255, 1);
 }
 
 /* Inline menu */
@@ -48,15 +57,47 @@ ul.inline-menu.with-gap li:last-child::after
 /* Header */
 .head.navigator
 {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.75);
 }
+.top.head.navigator
+{
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.top.head.navigator .item
+{
+    align-self: auto;
+    flex: 1;
+}
+
+/* Caption part: Left of top menu */
+.top.head.navigator .caption
+{
+    padding: 1rem;
+    padding-left: 2rem;
+}
+.top.head.navigator .caption small
+{
+    display: block;
+    line-height: 1.5rem;
+    color: white;
+}
+
+/* Title at top menu */
+.top.head.navigator .title.item img
+{
+    display: block;
+    margin: 1rem auto 1rem auto;
+}
+
+/* .justify.head-menu */
 
 /* The carousel slide styles is in carousel-slide.css */
 
 /* Main section */
 
 /* Introduction in main section. */
-.introduction.container { text-align: center; }
 .introduction .item h2  { font-size: 1.2rem; }
 .introduction .item img { margin: 0 auto; }
 
@@ -89,7 +130,6 @@ ul.inline-menu.with-gap li:last-child::after
 .heightlights .item .text h2,
 .heightlights .item .text p
 {
-    text-align: center;
     color: white;
     margin: 0;
 }
