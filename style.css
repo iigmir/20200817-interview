@@ -13,6 +13,17 @@ a:hover, a:active { font-weight: bolder; }
     max-width: 1024px;
     margin: 0 auto;
 }
+.flex-split
+{
+    display: flex;
+    justify-content: center;
+}
+
+.flex-split > .item
+{
+    flex: 1;
+    align-self: auto;
+}
 
 /* Link colours */
 .black-link a,
@@ -74,13 +85,6 @@ ul.inline-menu.with-gap li:last-child::after
 .top.head.navigator
 {
     padding-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-}
-.top.head.navigator .item
-{
-    align-self: auto;
-    flex: 1;
 }
 
 /* Caption part: Left of top menu */
@@ -197,6 +201,18 @@ ul.inline-menu.with-gap li:last-child::after
 .heightlights .item .text h2
 {
     font-size: 1.2rem;
+}
+
+/* Top picks and new arrivals */
+.shop .panel
+{
+    margin-top: 1rem;
+}
+.shop .gallery > .item
+{
+    box-shadow: 0 5px 10px black;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 /* Footer */

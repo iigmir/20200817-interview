@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="app">
-        <header class="computer-screen top head fixed navigator" v-bind:class="{ 'on-top': on_top, 'on-page': !on_top }">
+        <header class="computer-screen top head fixed navigator flex-split" v-bind:class="{ 'on-top': on_top, 'on-page': !on_top }">
             <div class="info item">
                 <div class="caption white-text">
                     <p v-bind:hidden="!on_top"><small><b>TEL</b>: (852) 2736 7778</small></p>
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </header>
-        <header class="mobile-screen top head fixed navigator">
+        <header class="mobile-screen top head fixed navigator flex-split">
             <div class="info item">
                 <div class="hamburger" v-on:click="set_mobile_menu_hidden(!mobile_menu_hidden)">
                     <img src="./fontawesome/bars.svg" alt="Hamburger menu" width="25" />
@@ -186,21 +186,55 @@
                     </div>
                 </section>
             </article>
-            <article class="top-picks container">
+            <article class="top-picks shop container">
                 <div class="panel">
                     <h2>Ponti's top picks</h2>
                     <div class="pagi"></div>
                 </div>
-                <div class="gallery">
-                    <p hidden>{{ top_picks }}</p>
+                <p hidden>{{ top_picks }}</p>
+                <div class="flex-split gallery">
+                    <section class="item">
+                        <div class="title">
+                            <h3>FJFFFNFKJNF</h3>
+                            <p><small>2012</small></p>
+                        </div>
+                        <div class="content">
+                            <div class="left info">
+                                <div class="flex-split ratings">
+                                    <div class="item">
+                                        <div class="name">AM</div>
+                                        <div>24</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="name">WS</div>
+                                        <div>15</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="name">WA</div>
+                                        <div>69</div>
+                                    </div>
+                                </div>
+                                <div class="meta">
+                                    <p>A: 1</p>
+                                    <p>A: 1</p>
+                                    <p>A: 1</p>
+                                    <p>A: 1</p>
+                                </div>
+                            </div>
+                            <div class="right picture">
+                                <img src="./images/W-JP-003-QT-216.jpg" alt="FJFFFNFKJNF" width="75" />
+                            </div>
+                        </div>
+                        <div class="buy"></div>
+                    </section>
                 </div>
             </article>
-            <article class="new-arrivals container">
+            <article class="new-arrivals shop container">
                 <div class="panel">
                     <h2>New arrival...</h2>
                     <div class="pagi"></div>
                 </div>
-                <div class="gallery">
+                <div class="flex-split gallery">
                     <p hidden>{{ new_arrivals }}</p>
                 </div>
             </article>
