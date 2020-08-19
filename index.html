@@ -192,7 +192,6 @@
                     <h2>Ponti's top picks</h2>
                     <div class="pagi"></div>
                 </div>
-                <p hidden>{{ top_picks }}</p>
                 <div v-if="top_picks" class="flex-split gallery">
                     <section v-for="(v_item, v_index) in top_picks_first" v-bind:key="v_index" class="vertical-justify item">
                         <div class="title">
@@ -267,8 +266,73 @@
                     <h2>New arrival...</h2>
                     <div class="pagi"></div>
                 </div>
-                <div class="flex-split gallery">
-                    <p hidden>{{ new_arrivals }}</p>
+                <div v-if="new_arrivals" class="flex-split gallery">
+                    <section v-for="(v_item, v_index) in new_arrivals_first" v-bind:key="v_index" class="vertical-justify item">
+                        <div class="title">
+                            <h3>{{ v_item.name }}</h3>
+                            <p><small>{{ v_item.vinage }}</small></p>
+                        </div>
+                        <div class="flex-split content">
+                            <div class="item left is info">
+                                <div class="flex-split ratings">
+                                    <div class="item">
+                                        <div class="name">AM</div>
+                                        <div>{{ v_item.rating.am }}</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="name">WS</div>
+                                        <div>{{ v_item.rating.ws }}</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="name">WA</div>
+                                        <div>{{ v_item.rating.wa }}</div>
+                                    </div>
+                                </div>
+                                <div hidden class="meta">
+                                    <p>Vintage: {{ v_item.vinage }}</p>
+                                    <p>Country: {{ v_item.country }}</p>
+                                    <p>Region: {{ v_item.region }}</p>
+                                    <p>Size: {{ v_item.size.amount }}{{ v_item.size.unit }}</p>
+                                </div>
+                                <div class="price">
+                                    <p v-if="is_sold_out(v_item.stock_amount)" class="all-caps sold-out">
+                                        <strong>Out of stuck</strong>
+                                    </p>
+                                    <p v-if="v_item.price.on_sale" class="all-caps on-sale">
+                                        <strong>{{ v_item.price.unit }}{{ v_item.price.new }}</strong>
+                                    </p>
+                                    <p class="value">
+                                        <del v-if="v_item.price.on_sale">{{ v_item.price.unit }}{{ v_item.price.old }}</del>
+                                        <span v-else>{{ v_item.price.unit }}{{ v_item.price.old }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item right is picture">
+                                <img v-bind="{ src: v_item.image, alt: v_item.name }" width="75" />
+                            </div>
+                        </div>
+                        <div class="buy">
+                            <div class="form-item">
+                                <div class="input-number">
+                                    <span
+                                        v-on:click="buy_amount(v_index, -1, v_item.stock_amount)"
+                                        class="is-down"
+                                        v-bind:class="{ 'is-disabled': bind_disabled_number(v_index, -1, v_item.stock_amount) }">-</span>
+                                    <input
+                                        type="number"
+                                        min="0"
+                                        v-bind:value="buy_amounts[v_index]"
+                                        v-bind:max="v_item.stock_amount"
+                                    />
+                                    <span
+                                        v-on:click="buy_amount(v_index, +1, v_item.stock_amount)"
+                                        class="is-up"
+                                        v-bind:class="{ 'is-disabled': bind_disabled_number(v_index, +1, v_item.stock_amount) }">+</span>
+                                    <button type="button" class="button" v-bind:disabled="is_sold_out(v_item.stock_amount)">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </article>
         </main>

@@ -81,6 +81,17 @@ var app = new Vue({
             }
             return [];
         },
+        new_arrivals_first() {
+            if( this.new_arrivals[0] ) {
+                return [
+                    this.new_arrivals[0],
+                    this.new_arrivals[1],
+                    this.new_arrivals[2],
+                    this.new_arrivals[3]
+                ];
+            }
+            return [];
+        },
     },
     methods: {
         set_detect_on_top() {
