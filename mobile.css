@@ -30,4 +30,37 @@
         margin-top: 1rem;
         padding-right: 0.5rem;
     }
+
+    .top.head.navigator.mobile-screen .menu-panel
+    {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        width: 90%;
+        background-color: white;
+        box-shadow: 0 5px 10px black;
+    }
+    .top.head.navigator.mobile-screen .menu-panel ul,
+    .top.head.navigator.mobile-screen .menu-panel ol
+    {
+        list-style: none;
+        margin-right: 20px;
+        margin-top: 16px;
+    }
+    .top.head.navigator.mobile-screen .menu-panel hr
+    {
+        margin: 8px 0 8px 0;
+    }
+    .top.head.navigator.mobile-screen .menu-panel .close
+    {
+        position: absolute;
+        right: 0.5rem;
+        font-size: 1.5rem;
+        top: 0.5rem;
+    }
+    .top.head.navigator.mobile-screen .menu-panel .close:hover
+    {
+        color: black;
+        background-color: transparent;
+    }
 }
