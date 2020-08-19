@@ -1,3 +1,8 @@
+.expand-height
+{
+    height: 100%;
+}
+
 /* Agile slider */
 .slider
 {
@@ -8,7 +13,8 @@
 {
     width: 100% !important;
 }*/
-.agile__nav-button
+/* class="VueCarousel-navigation-button VueCarousel-navigation-prev" */
+.VueCarousel-navigation-button
 {
     background: transparent;
     border: none;
@@ -22,12 +28,26 @@
             transition-duration: 0.3s;
     width: 80px;
 }
-.agile__nav-button:hover
+.VueCarousel-navigation-button:hover
 {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
 }
-.agile__nav-button--prev { left: 0; }
-.agile__nav-button--next { right: 0; }
+
+.VueCarousel-navigation-prev,
+.VueCarousel-navigation-next
+{
+    transform: translateY(-50%) !important;
+}
+
+.VueCarousel-navigation-prev img,
+.VueCarousel-navigation-next img
+{
+    /* fill: white; 
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em;
+    */
+}
 
 /* https://github.com/ssense/vue-carousel#readme */

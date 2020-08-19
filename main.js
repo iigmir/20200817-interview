@@ -14,7 +14,11 @@ var app = new Vue({
             },
             VueCarousel_settings: {
                 perPage: 1,
-                navigationEnabled: true
+                loop: true,
+                navigationEnabled: true,
+                paginationEnabled: false,
+                navigationPrevLabel: "<img src='./fontawesome/chevron-left.svg' />",
+                navigationNextLabel: "<img src='./fontawesome/chevron-right.svg' />",
             },
         }
     },
