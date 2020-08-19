@@ -1,0 +1,33 @@
+@media screen and (max-width: 900px)
+{
+    .top.head.navigator.computer-screen { display: none; }
+    .top.head.navigator.mobile-screen
+    {
+        display: flex;
+        justify-content: center;
+    }
+    .top.head.navigator.mobile-screen
+    {
+        background-color: #eaeaea;
+        padding: 0 1rem 0.5rem 1rem;
+    }
+    .hamburger
+    {
+        border-radius: 50%;
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+        background-color: black;
+        cursor: pointer;
+    }
+
+    .top.head.navigator.mobile-screen .title.item img
+    {
+        margin: 0 auto 0 auto;
+    }
+    .top.head.navigator.mobile-screen .member.item
+    {
+        margin-top: 1rem;
+        padding-right: 0.5rem;
+    }
+}
