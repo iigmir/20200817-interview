@@ -1,3 +1,38 @@
+function debounce(func, delay=250) {
+    let timer = null;
+   
+    return () => {
+        let context = this;
+        let args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(context, args);
+        }, delay)
+    }
+}
+
+function throttle(func, timeout = 250) {
+    let last;
+    let timer;
+   
+    return function () {
+        const context = this;
+        const args = arguments;
+        const now = + new Date();
+   
+        if (last && now < last + timeout) {
+            clearTimeout(timer);
+            timer = setTimeout( () => {
+                last = now;
+                func.apply( context, args );
+            }, timeout)
+        } else {
+            last = now;
+            func.apply( context, args );
+        }
+    }
+}
+
 var app = new Vue({
     el: "#app",
     components: {
@@ -18,6 +53,8 @@ var app = new Vue({
                 navigationNextLabel: "<img src='./fontawesome/chevron-right.svg' />",
             },
             selected_wine: [],
+            top_picks: [],
+            new_arrivals: [],
             on_top: true
         }
     },
@@ -32,10 +69,23 @@ var app = new Vue({
             return true;
         }
     },
-    created()
-    {
-        $K.init({
-            observer: true
-        });
+    methods: {
+        detect_on_top() {
+            this.on_top = window.scrollY < 10;
+        },
+        api_request() {
+            let top_ary = [];
+            let new_ary = [];
+            for (let index = 0; index < 12; index++) {
+                top_ary.push( API_GENERATOR() );
+                new_ary.push( API_GENERATOR() );
+            }
+            this.top_picks = top_ary;
+            this.new_arrivals = new_ary;
+        },
+    },
+    created() {
+        document.addEventListener( "scroll", this.detect_on_top );
+        this.api_request();
     }
 });

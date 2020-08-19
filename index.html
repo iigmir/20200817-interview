@@ -156,14 +156,18 @@
                     <h2>Ponti's top picks</h2>
                     <div class="pagi"></div>
                 </div>
-                <div class="gallery"></div>
+                <div class="gallery">
+                    <p hidden>{{ top_picks }}</p>
+                </div>
             </article>
             <article class="new-arrivals container">
                 <div class="panel">
                     <h2>New arrival...</h2>
                     <div class="pagi"></div>
                 </div>
-                <div class="gallery"></div>
+                <div class="gallery">
+                    <p hidden>{{ new_arrivals }}</p>
+                </div>
             </article>
         </main>
         <footer class="footer">
@@ -229,7 +233,7 @@
             <div class="item is-col"></div>
         </div>
     </div>
-    <script src="./kube/js/kube.min.js"></script>
+    <script src="./api-generator.js"></script>
     <script src="./vue/dev.js"></script>
     <script src="https://cdn.rawgit.com/SSENSE/vue-carousel/6823411d/dist/vue-carousel.min.js"></script>
     <script src="./main.js"></script>
