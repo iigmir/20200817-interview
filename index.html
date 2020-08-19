@@ -216,14 +216,22 @@
                                     </div>
                                 </div>
                                 <div hidden class="meta">
-                                    <p>A: 1</p>
-                                    <p>A: 1</p>
-                                    <p>A: 1</p>
-                                    <p>A: 1</p>
+                                    <p>Vintage: {{ v_item.vinage }}</p>
+                                    <p>Country: {{ v_item.country }}</p>
+                                    <p>Region: {{ v_item.region }}</p>
+                                    <p>Size: {{ v_item.size.amount }}{{ v_item.size.unit }}</p>
                                 </div>
                                 <div class="price">
-                                    <p v-if="is_sold_out(v_item.stock_amount)" class="all-caps sold-out">Out of stuck</p>
-                                    <p class="value">HK$ 786.01</p>
+                                    <p v-if="is_sold_out(v_item.stock_amount)" class="all-caps sold-out">
+                                        <strong>Out of stuck</strong>
+                                    </p>
+                                    <p v-if="v_item.price.on_sale" class="all-caps on-sale">
+                                        <strong>{{ v_item.price.unit }}{{ v_item.price.new }}</strong>
+                                    </p>
+                                    <p class="value">
+                                        <del v-if="v_item.price.on_sale">{{ v_item.price.unit }}{{ v_item.price.old }}</del>
+                                        <span v-else>{{ v_item.price.unit }}{{ v_item.price.old }}</span>
+                                    </p>
                                 </div>
                             </div>
                             <div class="item right is picture">

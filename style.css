@@ -314,10 +314,11 @@ ul.inline-menu.with-gap li:last-child::after
 }
 
 /* Price in gallery content's left */
-.shop .gallery .price .sold-out
+.shop .gallery .price strong
 {
     color: #c22c28;
     font-weight: bolder;
+    font-size: 1.2rem;
 }
 .shop .gallery .price .value
 {
