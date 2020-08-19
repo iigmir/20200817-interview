@@ -1,7 +1,9 @@
 var app = new Vue({
     el: "#app",
     components: {
-        agile: VueAgile
+        // agile: VueAgile
+        "carousel": VueCarousel.Carousel,
+        "slide": VueCarousel.Slide,
     },
     data()
     {
@@ -9,7 +11,11 @@ var app = new Vue({
             message: "Hello Vue!",
             agile_settings: {
                 dots: false
-            }
+            },
+            VueCarousel_settings: {
+                perPage: 1,
+                navigationEnabled: true
+            },
         }
     },
     created()

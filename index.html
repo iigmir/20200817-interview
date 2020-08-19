@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>點燃科技 2020 前端工程師試題</title>
     <link rel="stylesheet" href="./kube/css/kube.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/vue-agile/dist/VueAgile.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="carousel-slide.css">
 </head>
 <body>
     <div id="app">
@@ -37,7 +37,33 @@
             </div>
         </header>
         <div class="slider">
-            <agile v-bind="agile_settings">
+            <carousel v-bind="VueCarousel_settings">
+                <slide>
+                  Slide 1 Content
+                </slide>
+                <slide>
+                  Slide 2 Content
+                </slide>
+                <slide>
+                  Slide 3 Content
+                </slide>
+                <slide>
+                  Slide 4 Content
+                </slide>
+                <slide>
+                  Slide 5 Content
+                </slide>
+                <slide>
+                  Slide 6 Content
+                </slide>
+                <slide>
+                  Slide 7 Content
+                </slide>
+                <slide>
+                  Slide 8 Content
+                </slide>
+            </carousel>
+            <!-- <agile v-bind="agile_settings">
                 <img class="slide" src="./images/slider-1.png" alt="First slide" />
                 <img class="slide" src="./images/slider-2.png" alt="Second slide" />
                 <img class="slide" src="./images/slider-3.png" alt="Third slide" />
@@ -47,7 +73,7 @@
                 <template slot="nextButton">
                     <img src="./fontawesome/chevron-right.svg" alt="Switch to next slider" width="20" />
                 </template>
-            </agile>
+            </agile> -->
         </div>
         <main>
             <article class="introduction container is-row">
@@ -186,7 +212,7 @@
     </div>
     <script src="./kube/js/kube.min.js"></script>
     <script src="./vue/dev.js"></script>
-    <script src="https://unpkg.com/vue-agile"></script>
+    <script src="https://cdn.rawgit.com/SSENSE/vue-carousel/6823411d/dist/vue-carousel.min.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
