@@ -1,4 +1,4 @@
-@media screen and (max-width: 900px)
+@media screen and (max-width: 899px)
 {
     .top.head.navigator.computer-screen { display: none; }
     .top.head.navigator.mobile-screen
@@ -63,4 +63,9 @@
         color: black;
         background-color: transparent;
     }
+}
+
+@media screen and (min-width: 900px)
+{
+    .top.head.navigator.mobile-screen { display: none; }
 }
