@@ -210,7 +210,9 @@ ul.inline-menu.with-gap li:last-child::after
     transform: translateY(-50%) !important;
 }
 
-/* Main section */
+/*
+ * Main section CSS
+ */
 
 /* Introduction in main section. */
 .introduction .item h2  { font-size: 1.2rem; }
