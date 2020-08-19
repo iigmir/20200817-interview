@@ -1,32 +1,18 @@
 /* Rewrite Kube rules globally */
-a
-{
-    text-decoration: none;
-}
-a:hover, a:active
-{
-    font-weight: bolder;
-}
+a { text-decoration: none; }
+a:hover, a:active { font-weight: bolder; }
+.button, .button:active, .button:focus { background: #b69982; }
 
-.button, .button:active, .button:focus
-{
-    background: #b69982;
-}
-
-/* My global rules */
-.all-caps
-{
-    text-transform: uppercase;
-}
-.no-radius
-{
-    border-radius: 0;
-}
+/* My own global rules */
+.all-caps { text-transform: uppercase; }
+.no-radius { border-radius: 0; }
 .container
 {
     max-width: 1024px;
     margin: 0 auto;
 }
+
+/* Black broder */
 .black-broder
 {
     border: 1px black solid;
@@ -37,6 +23,8 @@ a:hover, a:active
 {
     color: rgba(0, 0, 0, 0.75);
 }
+
+/* Inline menu */
 ul.inline-menu
 {
     margin: 0;
