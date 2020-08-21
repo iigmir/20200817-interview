@@ -169,6 +169,11 @@ var app = new Vue({
             const new_value = this.buy_amounts[index] + value;
             return new_value < 0 || new_value > amount;
         },
+        bind_disabled_class(index = 0, value = 0, amount = 0) {
+            return {
+                'is-disabled': this.bind_disabled_number(index, value, amount),
+            };
+        },
         is_sold_out(amount = 1) {
             return amount < 1;
         }

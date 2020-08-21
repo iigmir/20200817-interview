@@ -335,21 +335,26 @@ ul.inline-menu.with-gap li:last-child::after
 {
     display: none;
 }
+.shop .gallery > .item:hover .desktop.meta
+{
+    display: block;
+}
 
 .shop .gallery > .item:hover
 {
     background-color: #c1ad9e;
 }
-.shop .gallery > .item:hover .title,
-.shop .gallery > .item:hover .content,
-.shop .gallery > .item:hover .buy
+.shop .gallery > .item:hover > *:not(.meta)
 {
     opacity: 0.25;
 }
+.shop .gallery > .item:hover .desktop.meta,
+.shop .gallery > .item:hover .buy
+{
+    z-index: 1;
+}
 .shop .gallery > .item:hover .desktop.meta
 {
-    display: block;
-    z-index: 1;
     /* https://stackoverflow.com/questions/37594525 */
     position: absolute;
     top: 50%;

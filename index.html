@@ -193,8 +193,10 @@
                     <div class="pagi"></div>
                 </div>
                 <div v-if="top_picks" class="flex-split gallery">
-                    <section v-for="(v_item, v_index) in top_picks_first" v-bind:key="v_index" class="vertical-justify item desktop-relative">
-                        <div class="desktop meta desktop-absolute">
+                    <section
+                        v-for="(v_item, v_index) in top_picks_first" v-bind:key="v_index"
+                        class="vertical-justify item desktop-relative">
+                        <div class="desktop meta">
                             <ul>
                                 <li>Vintage: <strong>{{ v_item.vinage }}</strong></li>
                                 <li>Country: <strong>{{ v_item.country }}</strong></li>
@@ -278,7 +280,7 @@
                 </div>
                 <div v-if="new_arrivals" class="flex-split gallery">
                     <section v-for="(v_item, v_index) in new_arrivals_first" v-bind:key="v_index" class="vertical-justify item desktop-relative">
-                        <div class="desktop meta desktop-absolute">
+                        <div class="desktop meta">
                             <ul>
                                 <li>Vintage: <strong>{{ v_item.vinage }}</strong></li>
                                 <li>Country: <strong>{{ v_item.country }}</strong></li>
@@ -337,7 +339,7 @@
                                     <span
                                         v-on:click="buy_amount(v_index, -1, v_item.stock_amount)"
                                         class="is-down"
-                                        v-bind:class="{ 'is-disabled': bind_disabled_number(v_index, -1, v_item.stock_amount) }">-</span>
+                                        v-bind:class="bind_disabled_class(v_index, +1, v_item.stock_amount)">-</span>
                                     <input
                                         type="number"
                                         min="0"
@@ -347,7 +349,8 @@
                                     <span
                                         v-on:click="buy_amount(v_index, +1, v_item.stock_amount)"
                                         class="is-up"
-                                        v-bind:class="{ 'is-disabled': bind_disabled_number(v_index, +1, v_item.stock_amount) }">+</span>
+                                        v-bind:class="bind_disabled_class(v_index, +1, v_item.stock_amount)">+</span>
+                                    <!-- bind_disabled_class() -->
                                     <button type="button" class="button" v-bind:disabled="is_sold_out(v_item.stock_amount)">Add to cart</button>
                                 </div>
                             </div>
