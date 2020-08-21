@@ -4,7 +4,7 @@ a:hover, a:active { font-weight: bolder; }
 .button, .button:active, .button:focus { background: #b69982; }
 
 /* My own global rules */
-main { padding: 0 1rem 0 1rem; }
+main { padding: 1rem; }
 .all-caps { text-transform: uppercase; }
 .no-radius { border-radius: 0; }
 .black-broder { border: 1px black solid; }
