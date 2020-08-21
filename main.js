@@ -92,10 +92,13 @@ var app = new Vue({
             }
             return [];
         },
+        is_desk_mode() {
+            return window.innerWidth >= 900;
+        }
     },
     methods: {
         set_detect_on_top() {
-            if( window.innerWidth >= 900 ) {
+            if( this.is_desk_mode ) {
                 document.addEventListener( "scroll", this.detect_on_top );
             }
         },
@@ -112,12 +115,33 @@ var app = new Vue({
             this.top_picks = top_ary;
             this.new_arrivals = new_ary;
         },
+        // Menu events
+        add_menu_listener() {
+            if( !this.is_desk_mode ) {
+                document.querySelector("#app").addEventListener(
+                    "click",
+                    e => this.close_menu_by_event(e)
+                );
+            }
+        },
         set_mobile_menu_hidden(bool = true) {
             this.mobile_menu_hidden = bool;
         },
+        toggle_menu() {
+            this.set_mobile_menu_hidden(!this.mobile_menu_hidden);
+        },
+        open_menu() {
+            this.set_mobile_menu_hidden(false);
+        },
         close_menu() {
-            if( !this.mobile_menu_hidden ) {
+            if( this.mobile_menu_hidden === false ) {
                 this.set_mobile_menu_hidden(true);
+            }
+        },
+        close_menu_by_event(event) {
+            const clicks_in_the_menu = event.target.contains( this.$refs.mobile_menu );
+            if( clicks_in_the_menu && this.is_desk_mode === false ) {
+                this.close_menu();
             }
         },
         set_close_menu_by_screen() {
@@ -153,5 +177,6 @@ var app = new Vue({
         this.api_request();
         this.set_detect_on_top();
         this.reset_buy_amounts();
+        this.add_menu_listener();
     }
 });

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="mobile.css" />
 </head>
 <body>
-    <div id="app">
+    <div id="app" v-on:click="close_menu_by_event">
         <header class="computer-screen top head fixed navigator flex-split" v-bind:class="{ 'on-top': on_top, 'on-page': !on_top }">
             <div class="info item">
                 <div class="caption white-text">
@@ -67,10 +67,10 @@
         </header>
         <header class="mobile-screen top head fixed navigator flex-split">
             <div class="info item">
-                <div class="hamburger" v-on:click="set_mobile_menu_hidden(!mobile_menu_hidden)">
+                <div class="hamburger" v-on:click="toggle_menu()">
                     <img src="./fontawesome/bars.svg" alt="Hamburger menu" width="25" />
                 </div>
-                <div class="menu-panel" v-bind:hidden="mobile_menu_hidden">
+                <div ref="mobile_menu" class="menu-panel" v-bind:hidden="mobile_menu_hidden">
                     <span class="close" v-on:click="close_menu()"></span>
                     <ul class="all-caps black-link menu">
                         <li><a href="#">Log in / Register</a></li>
