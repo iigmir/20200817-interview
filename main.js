@@ -177,6 +177,8 @@ var app = new Vue({
         },
         bind_disabled_class(index = 0, value = 0, amount = 0) {
             return {
+                'is-up': value > 0,
+                'is-down': value < 0,
                 'is-disabled': this.bind_disabled_number(index, value, amount),
             };
         },
