@@ -44,6 +44,11 @@ function chunks(array, size) {
     ;
 }
 
+function bind_disabled_number(index = 0, value = 0, amount = 0, array = []) {
+    const new_value = array[index] + value;
+    return new_value < 0 || new_value > amount;
+}
+
 var app = new Vue({
     el: "#app",
     components: {
@@ -117,8 +122,8 @@ var app = new Vue({
                 top_ary.push( API_GENERATOR() );
                 new_ary.push( API_GENERATOR() );
             }
-            this.top_picks = top_ary;
-            this.new_arrivals = new_ary;
+            this.top_picks = TOP_PICK_API;
+            this.new_arrivals = NEW_ARRI_API;
         },
         // Menu events
         add_menu_listener() {
@@ -163,7 +168,7 @@ var app = new Vue({
             }
             this.buy_amounts = a;
         },
-        buy_amount(index = 0, value = 0, amount = 0) {
+        buy_amount(index = 0, value = 0, amount = 0, amount_name = "") {
             let new_array = [ ...this.buy_amounts ];
             const new_value = this.buy_amounts[index] + value;
             if( new_value > 0 && new_value <= amount ) {
@@ -171,15 +176,12 @@ var app = new Vue({
                 this.buy_amounts = new_array;
             }
         },
-        bind_disabled_number(index = 0, value = 0, amount = 0) {
-            const new_value = this.buy_amounts[index] + value;
-            return new_value < 0 || new_value > amount;
-        },
-        bind_disabled_class(index = 0, value = 0, amount = 0) {
+        bind_disabled_class(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
+            const array = this[amount_name] || [];
             return {
                 'is-up': value > 0,
                 'is-down': value < 0,
-                'is-disabled': this.bind_disabled_number(index, value, amount),
+                'is-disabled': bind_disabled_number(index, value, amount, array),
             };
         },
         is_sold_out(amount = 1) {

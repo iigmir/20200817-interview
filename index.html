@@ -258,7 +258,7 @@
                             <div class="form-item">
                                 <div class="input-number">
                                     <span
-                                        v-on:click="buy_amount(v_index, -1, v_item.stock_amount)"
+                                        v-on:click="buy_amount(v_index, -1, v_item.stock_amount, 'top_picks_amount')"
                                         v-bind:class="bind_disabled_class(v_index, -1, v_item.stock_amount)">-</span>
                                     <input
                                         type="number"
@@ -267,7 +267,7 @@
                                         v-bind:max="v_item.stock_amount"
                                     />
                                     <span
-                                        v-on:click="buy_amount(v_index, +1, v_item.stock_amount)"
+                                        v-on:click="buy_amount(v_index, +1, v_item.stock_amount, 'top_picks_amount')"
                                         v-bind:class="bind_disabled_class(v_index, +1, v_item.stock_amount)">+</span>
                                     <button type="button" class="button" v-bind:disabled="is_sold_out(v_item.stock_amount)">Add to cart</button>
                                 </div>
@@ -346,7 +346,7 @@
                                 <div class="input-number">
                                     <span
                                         v-on:click="buy_amount(v_index, -1, v_item.stock_amount)"
-                                        v-bind:class="bind_disabled_class(v_index, -1, v_item.stock_amount)">-</span>
+                                        v-bind:class="bind_disabled_class(v_index, -1, v_item.stock_amount, 'new_arrivals_amount')">-</span>
                                     <input
                                         type="number"
                                         min="0"
@@ -355,7 +355,7 @@
                                     />
                                     <span
                                         v-on:click="buy_amount(v_index, +1, v_item.stock_amount)"
-                                        v-bind:class="bind_disabled_class(v_index, +1, v_item.stock_amount)">+</span>
+                                        v-bind:class="bind_disabled_class(v_index, +1, v_item.stock_amount, 'new_arrivals_amount')">+</span>
                                     <button type="button" class="button" v-bind:disabled="is_sold_out(v_item.stock_amount)">Add to cart</button>
                                 </div>
                             </div>
@@ -428,6 +428,7 @@
         </div>
     </div>
     <script src="./api-generator.js"></script>
+    <script src="./static-api.js"></script>
     <script src="./vue/dev.js"></script>
     <script src="./vue/vue-carousel.min.js"></script>
     <script src="./main.js"></script>
