@@ -120,14 +120,10 @@ var app = new Vue({
             this.on_top = window.scrollY < 10;
         },
         api_request() {
-            let top_ary = [];
-            let new_ary = [];
-            for (let index = 0; index < 12; index++) {
-                top_ary.push( API_GENERATOR() );
-                new_ary.push( API_GENERATOR() );
-            }
-            this.top_picks = TOP_PICK_API;
-            this.new_arrivals = NEW_ARRI_API;
+            let top_ary = [...Array(12)].map( () => API_GENERATOR() );
+            let new_ary = [...Array(12)].map( () => API_GENERATOR() );
+            this.top_picks = DYNAMIC_API ? top_ary : TOP_PICK_API;
+            this.new_arrivals = DYNAMIC_API ? new_ary : NEW_ARRI_API;
         },
         // Menu events
         add_menu_listener() {
