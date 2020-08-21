@@ -277,7 +277,15 @@
                     <div class="pagi"></div>
                 </div>
                 <div v-if="new_arrivals" class="flex-split gallery">
-                    <section v-for="(v_item, v_index) in new_arrivals_first" v-bind:key="v_index" class="vertical-justify item">
+                    <section v-for="(v_item, v_index) in new_arrivals_first" v-bind:key="v_index" class="vertical-justify item desktop-relative">
+                        <div class="desktop meta desktop-absolute">
+                            <ul>
+                                <li>Vintage: <strong>{{ v_item.vinage }}</strong></li>
+                                <li>Country: <strong>{{ v_item.country }}</strong></li>
+                                <li>Region: <strong>{{ v_item.region }}</strong></li>
+                                <li>Size: <strong>{{ v_item.size.amount }}{{ v_item.size.unit }}</strong></li>
+                            </ul>
+                        </div>
                         <div class="title">
                             <h3>{{ v_item.name }}</h3>
                             <p><small>{{ v_item.vinage }}</small></p>
@@ -298,11 +306,13 @@
                                         <div>{{ v_item.rating.wa }}</div>
                                     </div>
                                 </div>
-                                <div hidden class="meta">
-                                    <p>Vintage: {{ v_item.vinage }}</p>
-                                    <p>Country: {{ v_item.country }}</p>
-                                    <p>Region: {{ v_item.region }}</p>
-                                    <p>Size: {{ v_item.size.amount }}{{ v_item.size.unit }}</p>
+                                <div class="mobile meta">
+                                    <ul>
+                                        <li>Vintage: {{ v_item.vinage }}</li>
+                                        <li>Country: {{ v_item.country }}</li>
+                                        <li>Region: {{ v_item.region }}</li>
+                                        <li>Size: {{ v_item.size.amount }}{{ v_item.size.unit }}</li>
+                                    </ul>
                                 </div>
                                 <div class="price">
                                     <p v-if="is_sold_out(v_item.stock_amount)" class="all-caps sold-out">

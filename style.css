@@ -21,6 +21,10 @@ main { padding: 0 1rem 0 1rem; }
     flex: 1;
     align-self: auto;
 }
+.flex-split > .double.item
+{
+    flex: 2;
+}
 
 /* Link colours */
 .black-link a,
@@ -287,8 +291,17 @@ ul.inline-menu.with-gap li:last-child::after
 .shop .gallery .content
 {
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    height: 100%;
+    padding: 1rem;
+}
+
+.shop .gallery .content .info.item
+{
+    display: flex;
+    flex-flow: column;
+    flex-direction: column;
+    flex-basis: max-content;
+    justify-content: space-evenly;
 }
 
 /* Rating in gallery content's left */
@@ -337,6 +350,8 @@ ul.inline-menu.with-gap li:last-child::after
 {
     display: block;
     z-index: 1;
+    /* https://stackoverflow.com/questions/37594525 */
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -360,7 +375,15 @@ ul.inline-menu.with-gap li:last-child::after
 }
 
 /* Image in gallery content's right */
-.shop .gallery .picture img { float: right; }
+.shop .gallery .picture
+{
+    align-self: end;
+}
+.shop .gallery .picture img
+{
+    float: right;
+    max-height: 300px;
+}
 
 /* Buy panel in gallery's bottom part */
 .shop .gallery .buy
