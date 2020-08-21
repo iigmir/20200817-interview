@@ -275,6 +275,12 @@ ul.inline-menu.with-gap li:last-child::after
 .shop .panel
 {
     margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.shop .panel .pager
+{
+    margin: 0;
 }
 .shop .gallery > .item
 {
