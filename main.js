@@ -194,20 +194,12 @@ var app = new Vue({
                 console.error(array, pivot);
                 return;
             }
-            const next_nums = {
-                increase: pivot + 1,
-                decrease: pivot - 1
+            const small_chunk = chunks(array, this.group_unit).length - 1;
+            const results = {
+                increase: pivot + 1 <= small_chunk ? pivot + 1 : 0,
+                decrease: pivot - 1 >= 0 ? pivot - 1 : small_chunk,
             };
-            const conditions = {
-                increase: next_nums.increase <= chunks(array, this.group_unit).length - 1,
-                decrease: next_nums.decrease >= 0,
-            };
-            const default_numbers = {
-                increase: 0,
-                decrease: chunks(array, this.group_unit).length - 1,
-            };
-            let result = conditions[type] ? next_nums[type] : default_numbers[type];
-            this[name] = result;
+            this[name] = results[type] || 0;
             return;
         }
     },
