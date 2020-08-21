@@ -76,9 +76,12 @@ var app = new Vue({
     },
     computed: {
         shopcart() {
+            const amount =
+                this.new_arrivals_amount.filter(i=>i>0).length +
+                this.top_picks_amount.filter(i=>i>0).length;
             return {
-                amount: this.selected_wine.length,
-                has_thing: this.selected_wine.length > 0,
+                amount: amount,
+                has_thing: amount > 0,
             };
         },
         top_picks_first() {

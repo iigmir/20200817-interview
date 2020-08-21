@@ -160,7 +160,7 @@ ul.inline-menu.with-gap li:last-child::after
     content: attr(data-count);
     position: absolute;
     top: 1.5rem;
-    right: 16rem;
+    right: 1.6rem;
     width: var(--circle-width);
     height: var(--circle-width);
     line-height: var(--circle-width);
@@ -280,7 +280,7 @@ ul.inline-menu.with-gap li:last-child::after
 /* Top picks and new arrivals */
 .on-sale-badge::before
 {
-    content: "SALE";
+    content: attr(data-sale-text);
     background-color: crimson;
     color: white;
     padding: 0.5rem;
