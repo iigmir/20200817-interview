@@ -46,7 +46,7 @@ function chunks(array, size) {
 
 function bind_disabled_number(index = 0, value = 0, amount = 0, array = []) {
     const new_value = array[index] + value;
-    return new_value < 0 || new_value > amount;
+    return new_value < 0 || new_value > amount || amount < 1;
 }
 
 var app = new Vue({
@@ -168,7 +168,7 @@ var app = new Vue({
             }
             this.buy_amounts = a;
         },
-        buy_amount(index = 0, value = 0, amount = 0, amount_name = "") {
+        set_buy_amount(index = 0, value = 0, amount = 0, amount_name = "") {
             let new_array = [ ...this.buy_amounts ];
             const new_value = this.buy_amounts[index] + value;
             if( new_value > 0 && new_value <= amount ) {
@@ -176,7 +176,7 @@ var app = new Vue({
                 this.buy_amounts = new_array;
             }
         },
-        bind_disabled_class(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
+        bind_amount_class(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
             const array = this[amount_name] || [];
             return {
                 'is-up': value > 0,
