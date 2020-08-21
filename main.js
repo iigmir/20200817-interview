@@ -59,7 +59,6 @@ var app = new Vue({
     data()
     {
         return {
-            message: "Hello Vue!",
             VueCarousel_settings: {
                 perPage: 1,
                 loop: true,
@@ -162,21 +161,18 @@ var app = new Vue({
         },
         // Shop methods
         reset_buy_amounts(name = "buy_amounts") {
-            let a = [];
-            for (let index = 0; index < this.group_unit; index++) {
-                a.push(0);
-            }
-            this.buy_amounts = a;
+            const a = [...Array(this.group_unit)].map( () => 0 );
             this[name] = a;
         },
         set_buy_amount(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
             const old_array = this[amount_name];
             let new_array = [ ...old_array ];
             const new_value = old_array[index] + value;
-            if( new_value > 0 && new_value <= amount ) {
+            if( new_value >= 0 && new_value <= amount ) {
                 new_array[index] = new_value;
-                this[amount_name] = new_array;
-                console.log(this[amount_name]);
+                this.$set(this,amount_name,new_array);
+                // XXX: Find a way to avoid using $forceUpdate.
+                this.$forceUpdate();
             }
         },
         bind_amount_class(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
