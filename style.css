@@ -278,6 +278,16 @@ ul.inline-menu.with-gap li:last-child::after
 }
 
 /* Top picks and new arrivals */
+.on-sale-badge::before
+{
+    content: "SALE";
+    background-color: crimson;
+    color: white;
+    padding: 0.5rem;
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+}
 .shop .panel
 {
     margin-top: 1rem;
@@ -305,6 +315,7 @@ ul.inline-menu.with-gap li:last-child::after
 {
     overflow-wrap: anywhere;
     padding: 1rem;
+    padding-top: 2rem;
     padding-bottom: 0;
 }
 
