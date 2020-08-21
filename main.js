@@ -53,11 +53,11 @@ var app = new Vue({
                 navigationNextLabel: "<img src='./fontawesome/chevron-right.svg' />",
             },
             selected_wine: [],
-            top_picks: [],
-            selected_wine_id: 0,
-            top_picks_id: 0,
-            group_unit: 4,
             new_arrivals: [],
+            new_arrivals_pivot: 0,
+            top_picks: [],
+            top_picks_pivot: 0,
+            group_unit: 4,
             on_top: true,
             mobile_menu_hidden: true,
             buy_amounts: [],
@@ -72,23 +72,13 @@ var app = new Vue({
         },
         top_picks_first() {
             if( this.top_picks[0] ) {
-                return [
-                    this.top_picks[0],
-                    this.top_picks[1],
-                    this.top_picks[2],
-                    this.top_picks[3]
-                ];
+                return this.new_arrivals.slice( this.top_picks_pivot, this.group_unit );
             }
             return [];
         },
         new_arrivals_first() {
             if( this.new_arrivals[0] ) {
-                return [
-                    this.new_arrivals[0],
-                    this.new_arrivals[1],
-                    this.new_arrivals[2],
-                    this.new_arrivals[3]
-                ];
+                return this.new_arrivals.slice( this.new_arrivals_pivot, this.group_unit );
             }
             return [];
         },
