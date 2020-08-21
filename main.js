@@ -104,6 +104,11 @@ var app = new Vue({
         group_unit() {
             return this.is_desk_mode ? 4 : 1;
         },
+        heightlight_images() {
+            const texts = (mode = "desktop", index=0) => `./images/heightlight-${mode}-${index}.png`;
+            const mode = this.is_desk_mode ? "desktop" : "mobile";
+            return [...Array(4)].map( (it, id) => texts(mode, id+1) );
+        }
     },
     methods: {
         set_detect_on_top() {

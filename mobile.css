@@ -68,6 +68,17 @@
         background-color: transparent;
     }
 
+    .VueCarousel-slide .item .caption
+    {
+        font-size: inherit;
+    }
+
+    /* Heightlights */
+    .heightlights .item
+    {
+        margin-bottom: 1rem;
+    }
+
     /* Shop */
 
     .shop .gallery .mobile.meta

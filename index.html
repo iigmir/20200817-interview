@@ -150,7 +150,17 @@
             </article>
             <div class="break-line"></div>
             <article class="heightlights text-center narrow container is-row">
-                <section class="item is-col">
+                <section class="item is-col" v-for="(heightlight_image, heightlight_index) in heightlight_images" v-bind:key="heightlight_index">
+                    <div class="image">
+                        <img v-bind:src="heightlight_image" alt="Heightlight 1" />
+                    </div>
+                    <div class="text">
+                        <h2>Article 1</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </section>
+                <!-- heightlight_images -->
+                <!-- <section class="item is-col">
                     <div class="image">
                         <img src="./images/heightlight-desktop-1.png" alt="Heightlight 1" />
                     </div>
@@ -185,7 +195,7 @@
                         <h2>Article 4</h2>
                         <p>Lorem ipsum dolor sit amet</p>
                     </div>
-                </section>
+                </section> -->
             </article>
             <article class="top-picks shop container">
                 <div class="panel">
