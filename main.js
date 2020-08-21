@@ -57,7 +57,6 @@ var app = new Vue({
             new_arrivals_pivot: 0,
             top_picks: [],
             top_picks_pivot: 0,
-            group_unit: 4,
             on_top: true,
             mobile_menu_hidden: true,
             buy_amounts: [],
@@ -84,7 +83,10 @@ var app = new Vue({
         },
         is_desk_mode() {
             return window.innerWidth >= 900;
-        }
+        },
+        group_unit() {
+            return this.is_desk_mode ? 4 : 2;
+        },
     },
     methods: {
         set_detect_on_top() {

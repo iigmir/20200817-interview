@@ -78,6 +78,10 @@
     {
         display: none;
     }
+    .shop .gallery .content .info.item
+    {
+        flex-basis: min-content;
+    }
 }
 
 @media screen and (min-width: 900px)
