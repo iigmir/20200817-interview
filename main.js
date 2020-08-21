@@ -44,11 +44,6 @@ function chunks(array, size) {
     ;
 }
 
-function bind_disabled_number(index = 0, value = 0, amount = 0, array = []) {
-    const new_value = array[index] + value;
-    return new_value < 0 || new_value > amount || amount < 1;
-}
-
 var app = new Vue({
     el: "#app",
     components: {
@@ -75,6 +70,8 @@ var app = new Vue({
             on_top: true,
             mobile_menu_hidden: true,
             buy_amounts: [],
+            new_arrivals_amount: [],
+            top_picks_amount: []
         }
     },
     computed: {
@@ -171,11 +168,13 @@ var app = new Vue({
             if( new_value >= 0 && new_value <= amount ) {
                 new_array[index] = new_value;
                 this.$set(this,amount_name,new_array);
-                // XXX: Find a way to avoid using $forceUpdate.
-                this.$forceUpdate();
             }
         },
         bind_amount_class(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
+            const bind_disabled_number = (index = 0, value = 0, amount = 0, array = []) => {
+                const new_value = array[index] + value;
+                return new_value < 0 || new_value > amount || amount < 1;
+            }
             const array = this[amount_name] || [];
             return {
                 'is-up': value > 0,
