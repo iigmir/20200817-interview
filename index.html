@@ -190,7 +190,12 @@
             <article class="top-picks shop container">
                 <div class="panel">
                     <h2>Ponti's top picks</h2>
-                    <div class="pagi"></div>
+                    <div class="pagi">
+                        <div class="pager">
+                            <a v-on:click="switch_pivot('top_picks_pivot', 'decrease')" href="#" class="is-prev"></a>
+                            <a v-on:click="switch_pivot('top_picks_pivot', 'decrease')" href="#" class="is-next"></a>
+                        </div>
+                    </div>
                 </div>
                 <div v-if="top_picks" class="flex-split wrap-by-flex gallery">
                     <section
@@ -276,7 +281,12 @@
             <article class="new-arrivals shop container">
                 <div class="panel">
                     <h2>New arrival...</h2>
-                    <div class="pagi"></div>
+                    <div class="pagi">
+                        <div class="pager">
+                            <a v-on:click="switch_pivot('new_arrivals_pivot', 'decrease')" href="#" class="is-prev"></a>
+                            <a v-on:click="switch_pivot('new_arrivals_pivot', 'increase')" href="#" class="is-next"></a>
+                        </div>
+                    </div>
                 </div>
                 <div v-if="new_arrivals" class="flex-split wrap-by-flex gallery">
                     <section v-for="(v_item, v_index) in new_arrivals_first" v-bind:key="v_index" class="vertical-justify item desktop-relative">

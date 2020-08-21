@@ -33,6 +33,17 @@ function throttle(func, timeout = 250) {
     }
 }
 
+function slice_array({ array = [], pivot = 0, unit = 2 }) {
+    return array.slice( pivot, pivot + unit );
+}
+
+function chunks(array, size) {
+    return Array
+        .apply( 0, { length: Math.ceil(array.length / size) })
+        .map((_, index) => array.slice( index * size, ( index+1 )*size ))
+    ;
+}
+
 var app = new Vue({
     el: "#app",
     components: {
@@ -71,13 +82,15 @@ var app = new Vue({
         },
         top_picks_first() {
             if( this.top_picks[0] ) {
-                return this.new_arrivals.slice( this.top_picks_pivot, this.group_unit );
+                const checked = chunks( this.top_picks, this.group_unit );
+                return checked[ this.top_picks_pivot ];
             }
             return [];
         },
         new_arrivals_first() {
             if( this.new_arrivals[0] ) {
-                return this.new_arrivals.slice( this.new_arrivals_pivot, this.group_unit );
+                const checked = chunks( this.new_arrivals, this.group_unit );
+                return checked[ this.new_arrivals_pivot ];
             }
             return [];
         },
@@ -85,7 +98,7 @@ var app = new Vue({
             return window.innerWidth >= 900;
         },
         group_unit() {
-            return this.is_desk_mode ? 4 : 2;
+            return this.is_desk_mode ? 4 : 1;
         },
     },
     methods: {
@@ -168,6 +181,32 @@ var app = new Vue({
         },
         is_sold_out(amount = 1) {
             return amount < 1;
+        },
+        switch_pivot(target = "", type = "increase") {
+            const pivot = this[ target ];
+            const increase_number = ( pivot, unit, target, dictionary ) => {
+                const array = dictionary[target] || [];
+                const next_number = pivot + unit;
+                const condition = next_number > chunks( array, unit ).length;
+                const default_number = 0;
+                return condition ? default_number : next_number;
+            };
+            const decrease_number = ( pivot, unit, target, dictionary ) => {
+                const array = dictionary[target] || [];
+                const next_number = pivot - unit;
+                const condition = next_number < 0;
+                const default_number = unit * (chunks( array, unit ).length - 1);
+                return condition ? default_number : next_number;
+            };
+            let next_numbers = {
+                increase: increase_number( pivot, this.group_unit, target, {
+                    new_arrivals_pivot: this.new_arrivals,
+                    top_picks_pivot: this.top_picks
+                }),
+                decrease: pivot - this.group_unit
+            };
+            let next_number = next_numbers[type] || 0;
+            // if( next_number )
         }
     },
     created() {
