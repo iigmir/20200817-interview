@@ -211,7 +211,9 @@
                     <section
                         v-for="(v_item, v_index) in top_picks_first" v-bind:key="v_index"
                         class="vertical-justify item desktop-relative"
-                        v-bind:class="{ 'on-sale-badge': v_item.price.on_sale }">
+                        v-bind:class="{ 'on-sale-badge': v_item.price.on_sale }"
+                        data-sale-text="SALE"
+                    >
                         <div class="desktop meta">
                             <ul>
                                 <li>Vintage: <strong>{{ v_item.vinage }}</strong></li>
