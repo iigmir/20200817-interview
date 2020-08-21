@@ -161,7 +161,8 @@ var app = new Vue({
             }
         },
         // Shop methods
-        reset_buy_amounts(name = "buy_amounts") {
+        reset_buy_amounts(name = "new_arrivals_amount") {
+            console.log(name);
             const a = [...Array(this.group_unit)].map( () => 0 );
             this[name] = a;
         },
@@ -194,6 +195,10 @@ var app = new Vue({
                 new_arrivals_pivot: this.new_arrivals,
                 top_picks_pivot: this.top_picks
             };
+            const reset_dictionary = {
+                new_arrivals_pivot: "new_arrivals_amount",
+                top_picks_pivot: "top_picks_amount"
+            };
             const array = dictionary[name] || [];
             const pivot = this[name];
             if( array.length < 1 || typeof(pivot) !== "number" ) {
@@ -206,6 +211,8 @@ var app = new Vue({
                 decrease: pivot - 1 >= 0 ? pivot - 1 : small_chunk,
             };
             this[name] = results[type] || 0;
+            // Reset my cart because I don't want something there after reset it.
+            this.reset_buy_amounts(reset_dictionary[type]);
             return;
         }
     },
