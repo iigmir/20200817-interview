@@ -3,6 +3,12 @@ a { text-decoration: none; }
 a:hover, a:active { font-weight: bolder; }
 .button, .button:active, .button:focus { background: #b69982; }
 
+input.is-disabled, input.is-disabled:hover, input:disabled, input:disabled:hover, select.is-disabled, select.is-disabled:hover, select:disabled, select:disabled:hover, textarea.is-disabled, textarea.is-disabled:hover, textarea:disabled, textarea:disabled:hover,
+.is-disabled, .button:disabled, .input-number .is-up.is-disabled, .input-number .is-down.is-disabled
+{
+    cursor: not-allowed;
+}
+
 /* My own global rules */
 main { padding: 1rem; }
 .all-caps { text-transform: uppercase; }
@@ -423,10 +429,6 @@ ul.inline-menu.with-gap li:last-child::after
 .shop .gallery .buy .input-number .is-up
 {
     border: 1px solid #ffffff;
-}
-.shop .gallery .buy .input-number .is-disabled
-{
-    cursor: default;
 }
 .shop .gallery .buy .input-number input[type="number"]
 {

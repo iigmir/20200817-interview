@@ -161,19 +161,22 @@ var app = new Vue({
             }
         },
         // Shop methods
-        reset_buy_amounts() {
+        reset_buy_amounts(name = "buy_amounts") {
             let a = [];
             for (let index = 0; index < this.group_unit; index++) {
                 a.push(0);
             }
             this.buy_amounts = a;
+            this[name] = a;
         },
-        set_buy_amount(index = 0, value = 0, amount = 0, amount_name = "") {
-            let new_array = [ ...this.buy_amounts ];
-            const new_value = this.buy_amounts[index] + value;
+        set_buy_amount(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
+            const old_array = this[amount_name];
+            let new_array = [ ...old_array ];
+            const new_value = old_array[index] + value;
             if( new_value > 0 && new_value <= amount ) {
                 new_array[index] = new_value;
-                this.buy_amounts = new_array;
+                this[amount_name] = new_array;
+                console.log(this[amount_name]);
             }
         },
         bind_amount_class(index = 0, value = 0, amount = 0, amount_name = "buy_amounts") {
@@ -210,7 +213,8 @@ var app = new Vue({
     created() {
         this.api_request();
         this.set_detect_on_top();
-        this.reset_buy_amounts();
+        this.reset_buy_amounts("top_picks_amount");
+        this.reset_buy_amounts("new_arrivals_amount");
         this.add_menu_listener();
     }
 });
