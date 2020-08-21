@@ -1,6 +1,9 @@
 @media screen and (max-width: 899px)
 {
-    .top.head.navigator.computer-screen { display: none; }
+    .top.head.navigator.desktop-screen { display: none; }
+    .desktop-relative { position: static; }
+
+    /* The navigator */
     .top.head.navigator.mobile-screen
     {
         display: flex;
@@ -31,6 +34,7 @@
         padding-right: 0.5rem;
     }
 
+    /* Mobile Menu */
     .top.head.navigator.mobile-screen .menu-panel
     {
         position: absolute;
@@ -62,6 +66,17 @@
     {
         color: black;
         background-color: transparent;
+    }
+
+    /* Shop */
+
+    .shop .gallery .mobile.meta
+    {
+        display: block;
+    }
+    .shop .gallery .desktop.meta
+    {
+        display: none;
     }
 }
 

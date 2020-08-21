@@ -313,6 +313,40 @@ ul.inline-menu.with-gap li:last-child::after
     color: #ffffff;
 }
 
+/* Meta is hidden in desktop mode unless users hover */
+.desktop-relative { position: relative; }
+.desktop-relative .desktop-absolute { position: absolute; }
+
+.shop .gallery .mobile.meta,
+.shop .gallery .desktop.meta
+{
+    display: none;
+}
+
+.shop .gallery > .item:hover
+{
+    background-color: #c1ad9e;
+}
+.shop .gallery > .item:hover .title,
+.shop .gallery > .item:hover .content,
+.shop .gallery > .item:hover .buy
+{
+    opacity: 0.25;
+}
+.shop .gallery > .item:hover .desktop.meta
+{
+    display: block;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.shop .gallery > .item:hover .desktop.meta ul
+{
+    list-style: none;
+    color: white;
+}
+
 /* Price in gallery content's left */
 .shop .gallery .price strong
 {
